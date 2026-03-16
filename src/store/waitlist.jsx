@@ -1,5 +1,6 @@
 import { create } from "zustand";
-const port = "http://localhost:3000";
+const render_url='https://waitlist-backend-m5ia.onrender.com/'
+const port = "http://localhost:3000"||`${render_url}}`;
 export const useStore = create((set) => ({
     systemStats:async()=>{
         try{
