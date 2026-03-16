@@ -21,7 +21,6 @@ const Hero = () => {
       console.log(email);
       console.log(role);
       const data = await postWaitlist(email, role);
-      console.log(data?.exist?.position);
       if (data) {
         const email = data?.waiter?.email ?? data?.exist?.email;
         const Role = data?.exist?.role ?? data?.waiter?.role;
@@ -47,7 +46,6 @@ const Hero = () => {
     const fetchSystemStats = async () => {
       try {
         const fetchedStats = await systemStats();
-        console.log(fetchedStats);
         setStats(fetchedStats);
       } catch (err) {
         console.log(err);

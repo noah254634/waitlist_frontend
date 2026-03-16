@@ -12,7 +12,6 @@ export const useStore = create((set) => ({
         },
       });
       const data = await response.json();
-      console.log(data);
       return data;
     } catch (err) {
       console.log(err);
@@ -20,7 +19,7 @@ export const useStore = create((set) => ({
   },
   postWaitlist: async (email, role) => {
     try {
-      const response = await fetch(`${port}/api/v1/email_endpoint`, {
+      const response = await fetch(`${API_URL}/api/v1/email_endpoint`, {
         method: "POST",
         body: JSON.stringify({ email, role }),
         headers: {
@@ -28,7 +27,6 @@ export const useStore = create((set) => ({
         },
       });
       const data = await response.json();
-      console.log(data);
       if (data.error) {
         console.error(data.error);
         throw new Error(data.error);
