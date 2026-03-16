@@ -98,9 +98,9 @@ const Footer = () => {
               engineers.
             </p>
             <div className="flex gap-3">
-              <SocialLink icon={<Twitter className="w-4 h-4" />} />
-              <SocialLink icon={<Github className="w-4 h-4" />} />
-              <SocialLink icon={<Globe className="w-4 h-4" />} />
+              {/*<SocialLink icon={<Twitter className="w-4 h-4" />} />*/}
+              <SocialLink href="https://github.com/noah254634" icon={<Github className="w-4 h-4"   />} />
+              {/*<SocialLink icon={<Globe className="w-4 h-4" />} />*/}
             </div>
           </div>
 
@@ -213,10 +213,15 @@ const FooterLink = ({ label }) => (
   </span>
 );
 
-const SocialLink = ({ icon }) => (
-  <button className="p-2.5 bg-zinc-950 border border-zinc-900 rounded-lg hover:border-zinc-700 hover:text-blue-500 text-zinc-500 transition-all">
+const SocialLink = ({ icon, href }) => (
+  <a 
+    href={href} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="p-2.5 bg-zinc-950 border border-zinc-900 rounded-lg hover:border-zinc-700 hover:text-blue-500 text-zinc-500 transition-all flex items-center justify-center"
+  >
     {icon}
-  </button>
+  </a>
 );
 
 export default Footer;
